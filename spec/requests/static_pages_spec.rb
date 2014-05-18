@@ -19,11 +19,15 @@ describe "StaticPages" do
       expect(page).to have_content('Stores')      
     end
 
-    it "should have the title 'Home'" do
+    it "should have the title 'Stores4 App'" do
       visit '/static_pages/home' 
-      expect(page).to have_title('Home')      
+      expect(page).to have_title('Stores4 App')      
     end
 
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title('| Home')
+    end
   end
 
 
@@ -33,9 +37,15 @@ describe "StaticPages" do
       expect(page).to have_content('Contact Us')      
     end
 
-    it "should have the title 'Contact Us'" do
+    #JUst FYI, have_content even works with substring
+    it "should have 'Contact' in it's contact page name " do
       visit '/static_pages/contact' 
-      expect(page).to have_title('Contact Us')      
+      expect(page).to have_content('Contact')      
+    end
+
+    it "should have the title 'Stores4 App | Contact Us'" do
+      visit '/static_pages/contact' 
+      expect(page).to have_title('Stores4 App | Contact Us')      
     end
   end
 
@@ -45,10 +55,17 @@ describe "StaticPages" do
       expect(page).to have_content('About Us')
     end
 
+    # Just FYI, have_title even works for substring
     it "should have the title 'About Us'" do
       visit '/static_pages/about' 
       expect(page).to have_title('About Us')      
+    end    
+
+    it "should have the title 'Stores4 App | About Us'" do
+      visit '/static_pages/about' 
+      expect(page).to have_title('Stores4 App | About Us')      
     end
+
   end
 
 end
