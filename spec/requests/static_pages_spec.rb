@@ -15,17 +15,22 @@ describe "StaticPages" do
 
   describe "home page" do
     it "should have 'Stores' in it's home page name " do
-      visit '/static_pages/home' 
+      visit '/static_pages/home' #the old way of calling the links
+      expect(page).to have_content('Stores')      
+    end
+
+    it "should have 'Stores' in it's home page name " do
+      visit home_path #Using REST 
       expect(page).to have_content('Stores')      
     end
 
     it "should have the title 'Stores4 App'" do
-      visit '/static_pages/home' 
+      visit home_path
       expect(page).to have_title('Stores4 App')      
     end
 
     it "should not have a custom page title" do
-      visit '/static_pages/home'
+      visit home_path
       expect(page).not_to have_title('| Home')
     end
   end
@@ -33,36 +38,36 @@ describe "StaticPages" do
 
   describe "contact page" do
     it "should have 'Contact Us' in it's contact page name " do
-      visit '/static_pages/contact' 
+      visit contact_path
       expect(page).to have_content('Contact Us')      
     end
 
     #JUst FYI, have_content even works with substring
     it "should have 'Contact' in it's contact page name " do
-      visit '/static_pages/contact' 
+      visit contact_path
       expect(page).to have_content('Contact')      
     end
 
     it "should have the title 'Stores4 App | Contact Us'" do
-      visit '/static_pages/contact' 
+      visit contact_path
       expect(page).to have_title('Stores4 App | Contact Us')      
     end
   end
 
   describe "About page" do
     it "should have 'About Us' in the about page" do
-      visit '/static_pages/about'
+      visit about_path
       expect(page).to have_content('About Us')
     end
 
     # Just FYI, have_title even works for substring
     it "should have the title 'About Us'" do
-      visit '/static_pages/about' 
+      visit about_path
       expect(page).to have_title('About Us')      
     end    
 
     it "should have the title 'Stores4 App | About Us'" do
-      visit '/static_pages/about' 
+      visit about_path
       expect(page).to have_title('Stores4 App | About Us')      
     end
 

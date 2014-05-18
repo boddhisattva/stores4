@@ -24,6 +24,8 @@ gem 'jbuilder', '1.0.2'
 
 #Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compass
 gem 'bootstrap-sass', '2.3.2.0'
+# Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS.
+gem 'sprockets', '2.11.0' #not sure if this needs to be explicity specified
 
 
 group :doc do
