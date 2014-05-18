@@ -22,6 +22,10 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 
+#Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compass
+gem 'bootstrap-sass', '2.3.2.0'
+
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
