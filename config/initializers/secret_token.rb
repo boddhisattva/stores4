@@ -9,7 +9,7 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Stores4::Application.config.secret_key_base = secure_token
+
 
 require 'securerandom'
 
@@ -26,4 +26,4 @@ def secure_token
   end
 end
 
-SampleApp::Application.config.secret_key_base = secure_token
+Stores4::Application.config.secret_key_base = secure_token
