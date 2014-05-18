@@ -13,12 +13,26 @@ describe "StaticPages" do
   #end
 
 
-  describe "GET home page" do
-    it "should have 'stores' in it's home page name " do
-      visit '/static_pages/home' do
-        expect(page).to have_content('Stores')
-      end
+  describe "home page" do
+    it "should have 'Stores' in it's home page name " do
+      visit '/static_pages/home' 
+      expect(page).to have_content('Stores')      
     end
+  end
+
+  describe "contact page" do
+    it "should have 'Contact Us' in it's contact page name " do
+      visit '/static_pages/contact' 
+      expect(page).to have_content('Contact Us')      
+    end
+  end
+
+  describe "About page" do
+    it "should have 'About Us' in the about page" do
+      visit '/static_pages/about'
+      expect(page).to have_content('About Us')
+    end
+
   end
 
 end
