@@ -18,12 +18,24 @@ describe "StaticPages" do
       visit '/static_pages/home' 
       expect(page).to have_content('Stores')      
     end
+
+    it "should have the title 'Home'" do
+      visit '/static_pages/home' 
+      expect(page).to have_title('Stores')      
+    end
+
   end
+
 
   describe "contact page" do
     it "should have 'Contact Us' in it's contact page name " do
       visit '/static_pages/contact' 
       expect(page).to have_content('Contact Us')      
+    end
+
+    it "should have the title 'Contact Us'" do
+      visit '/static_pages/home' 
+      expect(page).to have_title('Contact Us')      
     end
   end
 
@@ -33,6 +45,10 @@ describe "StaticPages" do
       expect(page).to have_content('About Us')
     end
 
+    it "should have the title 'About Us'" do
+      visit '/static_pages/home' 
+      expect(page).to have_title('About Us')      
+    end
   end
 
 end
