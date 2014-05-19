@@ -14,23 +14,22 @@ describe "StaticPages" do
 
 
   describe "home page" do
+    before {visit home_path}
     it "should have 'Stores' in it's home page name " do
-      visit '/static_pages/home' #the old way of calling the links
+      #visit '/static_pages/home' the old way of calling the links
       expect(page).to have_content('Stores')      
     end
 
     it "should have 'Stores' in it's home page name " do
-      visit home_path #Using REST 
+      #visit home_path #Using REST , we need not specify this in every do block when make use of the same in before block
       expect(page).to have_content('Stores')      
     end
 
-    it "should have the title 'Stores4 App'" do
-      visit home_path
+    it "should have the title 'Stores4 App'" do    
       expect(page).to have_title('Stores4 App')      
     end
 
-    it "should not have a custom page title" do
-      visit home_path
+    it "should not have a custom page title" do      
       expect(page).not_to have_title('| Home')
     end
   end
