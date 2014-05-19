@@ -26,7 +26,8 @@ gem 'jbuilder', '1.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 # Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS.
 gem 'sprockets', '2.11.0' #not sure if this needs to be explicity specified
-
+#for passwords
+gem 'bcrypt-ruby', '3.1.2'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
