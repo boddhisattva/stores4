@@ -1,4 +1,5 @@
 Stores4::Application.routes.draw do
+  resources :users
   get "users/new"
  #get "static_pages/home" the old way of defining them. We are now using REST path defined below.
   
