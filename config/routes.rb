@@ -2,6 +2,7 @@ Stores4::Application.routes.draw do
   resources :users
   get "users/new"
  #get "static_pages/home" the old way of defining them. We are now using REST path defined below.
+  resources :sessions, only: [:new, :create, :destroy]
   
   root  'static_pages#home'
 
@@ -11,6 +12,8 @@ Stores4::Application.routes.draw do
   match 'help', to: 'static_pages#help', via: 'get'
 
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
