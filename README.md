@@ -1,6 +1,6 @@
 ``` About ```
 
-Sample Stores App.
+Sample Stores App using this [tutorial](http://rails-4-0.railstutorial.org/book) as a reference.
 
 ``` Running App ```
 
