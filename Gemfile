@@ -3,10 +3,10 @@ ruby '2.0.0'
 #ruby-gemset=stores4
 
 gem 'rails', '4.0.5'
+gem 'pg', '0.15.1'
 
 group :development, :test do
-  #gem 'sqlite3', '1.3.8'
-  gem 'mysql2', '~> 0.3.16'
+
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -30,12 +30,17 @@ gem 'sprockets', '2.11.0' #not sure if this needs to be explicity specified
 #for passwords
 gem 'bcrypt-ruby', '3.1.2'
 
+# Manage front end assets using Bower via rails assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery', "1.10.2"
+  gem 'rails-assets-jquery-ujs'
+end
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
