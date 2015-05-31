@@ -6,8 +6,8 @@ gem 'rails', '4.0.5'
 gem 'pg', '0.15.1'
 
 group :development, :test do
-
   gem 'rspec-rails', '2.13.1'
+  gem 'rubocop'
 end
 
 group :test do
